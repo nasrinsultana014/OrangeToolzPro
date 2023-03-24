@@ -33,7 +33,6 @@ public class ProcessorRunnable implements Runnable {
     @Override
     public void run() {
 
-        ArrayList<InvalidCustomer> invalidCustomers = new ArrayList<>();
         for(long i=this.start; (i<this.end && i<linesToProcess.size()); i++){
             Customer customer  = this.customerService.prepareCustomer(linesToProcess.get((int)i));
             if(customer!=null){
@@ -42,18 +41,10 @@ public class ProcessorRunnable implements Runnable {
                 }catch (Exception e){
                     InvalidCustomer invalidCustomer  = this.customerService.prepareInvalidCustomer(linesToProcess.get((int)i));
                     if(invalidCustomer != null){
-                        invalidCustomers.add(invalidCustomer);
-                        if(invalidCustomers.size() > 10000){
-                            this.invalidCustomerRepository.saveAll(invalidCustomers);
-                            invalidCustomers.clear();
-                        }
-                        //this.invalidCustomerRepository.save(invalidCustomer);
+                        this.invalidCustomerRepository.save(invalidCustomer);
                     }
                 }
             }
-        }
-        if(invalidCustomers.size() > 0){
-            this.invalidCustomerRepository.saveAll(invalidCustomers);
         }
     }
 }

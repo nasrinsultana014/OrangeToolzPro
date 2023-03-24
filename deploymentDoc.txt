@@ -1,0 +1,13 @@
+Deployment:
+1. Create a database named "orange_toolz_pro" in MySQL DB. Provide the username and password in the application.properties file.
+2. Create the war.
+3. Deploy the war in tomcat.
+
+UI:
+1. To save customer data use the upload file option.
+2. To export invalid customer data click on "download invalid customer" button.
+3. To export valid customer data click on "download valid customer" button.
+
+Timing:
+Exporting invalid customer data took 24sec
+Exporting valid data in batch took 3 sec

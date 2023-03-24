@@ -19,7 +19,7 @@ import java.util.zip.ZipOutputStream;
 public class CustomerService {
     private static final long LINES_PER_THREAD =  25000;
     private static final long INVALID_CUSTOMER_PER_THREAD =  1000;
-    private static final long VALID_CUSTOMER_PER_THREAD =  100;
+    private static final long VALID_CUSTOMER_PER_THREAD =  10000;
 
     private CustomerRepository customerRepository;
     private InvalidCustomerRepository invalidCustomerRepository;
