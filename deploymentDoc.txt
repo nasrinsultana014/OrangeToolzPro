@@ -10,4 +10,4 @@ UI:
 
 Timing:
 Exporting invalid customer data took 24sec
-Exporting valid data in batch took 3 sec
+Exporting valid data in batch took 1 sec
