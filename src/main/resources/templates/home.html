@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Customer Data Entry</title>
+  </head>
+  <body>
+    <form method="POST" enctype="multipart/form-data" action="/customer/uploadFile">
+      <table>
+        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+        <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+      </table>
+    </form>
+
+    <form method="GET" enctype="multipart/form-data" action="/customer">
+      <table>
+        <tr><td><input type="hidden" name="type" value="invalid"/> </td></tr>
+        <tr><td></td><td><input type="submit" value="Download invalid customer" /></td></tr>
+      </table>
+    </form>
+
+    <form method="GET" enctype="multipart/form-data" action="/customer">
+      <table>
+        <tr><td><input type="hidden" name="type" value="valid"/> </td></tr>
+        <tr><td></td><td><input type="submit" value="Download valid customer" /></td></tr>
+      </table>
+    </form>
+  </body>
+</html>
